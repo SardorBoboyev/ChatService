@@ -10,6 +10,6 @@ import uz.sb.chatservice.domain.dto.response.UserResponse;
 @FeignClient(name = "AUTH-SERVICE", configuration = FeignClientsConfiguration.class)
 public interface AuthServiceClient {
 
-    @GetMapping("/api/auth/{id}")
+    @GetMapping("/api/auth/find-by-id/{id}")
     UserResponse findById(@PathVariable("id") Long id);
 }
