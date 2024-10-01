@@ -7,8 +7,10 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-public class UserResponse extends BaseResponse{
-    private String name;
+public class UserResponse extends BaseResponse {
     private String username;
+    private String firstName;
+    private String lastName;
     private String phoneNumber;
+
 }
