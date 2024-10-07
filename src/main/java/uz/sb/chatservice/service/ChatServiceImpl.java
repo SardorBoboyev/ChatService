@@ -47,10 +47,7 @@ public class ChatServiceImpl implements ChatService {
 
     @Override
     public List<ChatEntity> findAllByUser(Long userId) {
-        return chatRepository.findAll().stream()
-                .filter(chat -> !(chat.getUser1Id().equals(userId) && chat.isDeletedByUser1()) &&
-                        !(chat.getUser2Id().equals(userId) && chat.isDeletedByUser2()))
-                .collect(Collectors.toList());
+        return chatRepository.findAllByUser(userId);
     }
 
 

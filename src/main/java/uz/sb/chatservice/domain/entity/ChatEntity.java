@@ -32,7 +32,9 @@ public class ChatEntity {
 
     private Long user2Id;
 
+    @Builder.Default
     private boolean isDeletedByUser1 = false;
 
+    @Builder.Default
     private boolean isDeletedByUser2 = false;
 }
