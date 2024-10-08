@@ -3,10 +3,10 @@ package uz.sb.chatservice.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import uz.sb.chatservice.clients.AuthServiceClient;
-import uz.sb.chatservice.domain.dto.request.ChatRequest;
-import uz.sb.chatservice.domain.dto.request.DeletedChatRequest;
 import uz.sb.chatservice.domain.entity.ChatEntity;
 import uz.sb.chatservice.repository.ChatRepository;
+import uz.sb.domain.dto.request.ChatRequest;
+import uz.sb.domain.dto.request.DeletedChatRequest;
 
 import java.util.List;
 import java.util.Objects;

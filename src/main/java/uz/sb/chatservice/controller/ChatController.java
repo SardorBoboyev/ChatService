@@ -2,10 +2,10 @@ package uz.sb.chatservice.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import uz.sb.chatservice.domain.dto.request.ChatRequest;
-import uz.sb.chatservice.domain.dto.request.DeletedChatRequest;
 import uz.sb.chatservice.domain.entity.ChatEntity;
 import uz.sb.chatservice.service.ChatService;
+import uz.sb.domain.dto.request.ChatRequest;
+import uz.sb.domain.dto.request.DeletedChatRequest;
 
 import java.util.List;
 
