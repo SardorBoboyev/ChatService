@@ -9,7 +9,6 @@ import uz.sb.chatservice.service.ChatService;
 
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/api/chat")
 @RequiredArgsConstructor
