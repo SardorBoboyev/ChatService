@@ -1,6 +1,8 @@
 package uz.sb.chatservice.service;
 
 import uz.sb.chatservice.domain.entity.ChatEntity;
+import uz.sb.chatservice.domain.views.ChatInfoResponse;
+import uz.sb.chatservice.domain.views.ChatInfoResponseImpl;
 import uz.sb.domain.dto.request.ChatRequest;
 import uz.sb.domain.dto.request.DeletedChatRequest;
 
@@ -12,8 +14,8 @@ public interface ChatService {
 
     ChatEntity findById(Long chatId);
 
-    List<ChatEntity> findAllByUser(Long user);
-
     void delete(DeletedChatRequest deletedChatRequest);
+
+    List<ChatInfoResponse> findAllChatInfoByUser(Long user);
 
 }

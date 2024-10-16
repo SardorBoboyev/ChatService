@@ -3,6 +3,7 @@ package uz.sb.chatservice.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import uz.sb.chatservice.domain.entity.ChatEntity;
+import uz.sb.chatservice.domain.views.ChatInfoResponse;
 import uz.sb.chatservice.service.ChatService;
 import uz.sb.domain.dto.request.ChatRequest;
 import uz.sb.domain.dto.request.DeletedChatRequest;
@@ -23,8 +24,8 @@ public class ChatController {
     }
 
     @GetMapping("/find-by-user/{userId}")
-    public List<ChatEntity> findAllByUser(@PathVariable long userId) {
-        return chatService.findAllByUser(userId);
+    public List<ChatInfoResponse> findAllByUser(@PathVariable long userId) {
+        return chatService.findAllChatInfoByUser(userId);
     }
 
     @GetMapping("/find-by-id/{id}")
