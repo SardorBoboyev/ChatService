@@ -6,15 +6,11 @@ import uz.sb.chatservice.clients.AuthServiceClient;
 import uz.sb.chatservice.domain.entity.ChatEntity;
 import uz.sb.chatservice.domain.entity.dto.request.ChatRequest;
 import uz.sb.chatservice.domain.entity.dto.request.DeletedChatRequest;
+import uz.sb.chatservice.domain.entity.dto.response.UserResponse;
 import uz.sb.chatservice.exception.DataNotFoundException;
 import uz.sb.chatservice.repository.ChatRepository;
 import uz.sb.chatservice.domain.views.ChatInfoResponse;
 import uz.sb.chatservice.domain.views.ChatInfoResponseImpl;
-import uz.sb.chatservice.exception.DataNotFoundException;
-import uz.sb.chatservice.repository.ChatRepository;
-import uz.sb.domain.dto.request.ChatRequest;
-import uz.sb.domain.dto.request.DeletedChatRequest;
-import uz.sb.domain.dto.response.UserResponse;
 
 import java.util.ArrayList;
 import java.util.List;
