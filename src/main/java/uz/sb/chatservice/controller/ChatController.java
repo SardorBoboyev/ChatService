@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import uz.sb.chatservice.domain.entity.ChatEntity;
 import uz.sb.chatservice.domain.entity.dto.request.ChatRequest;
 import uz.sb.chatservice.domain.entity.dto.request.DeletedChatRequest;
+import uz.sb.chatservice.domain.views.ChatInfoResponse;
 import uz.sb.chatservice.service.ChatService;
 
 
@@ -23,8 +24,8 @@ public class ChatController {
     }
 
     @GetMapping("/find-by-user/{userId}")
-    public List<ChatEntity> findAllByUser(@PathVariable long userId) {
-        return chatService.findAllByUser(userId);
+    public List<ChatInfoResponse> findAllByUser(@PathVariable long userId) {
+        return chatService.findAllChatInfoByUser(userId);
     }
 
     @GetMapping("/find-by-id/{id}")

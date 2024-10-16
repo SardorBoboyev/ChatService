@@ -8,7 +8,15 @@ import uz.sb.chatservice.domain.entity.dto.request.ChatRequest;
 import uz.sb.chatservice.domain.entity.dto.request.DeletedChatRequest;
 import uz.sb.chatservice.exception.DataNotFoundException;
 import uz.sb.chatservice.repository.ChatRepository;
+import uz.sb.chatservice.domain.views.ChatInfoResponse;
+import uz.sb.chatservice.domain.views.ChatInfoResponseImpl;
+import uz.sb.chatservice.exception.DataNotFoundException;
+import uz.sb.chatservice.repository.ChatRepository;
+import uz.sb.domain.dto.request.ChatRequest;
+import uz.sb.domain.dto.request.DeletedChatRequest;
+import uz.sb.domain.dto.response.UserResponse;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -46,12 +54,6 @@ public class ChatServiceImpl implements ChatService {
 
 
     @Override
-    public List<ChatEntity> findAllByUser(Long userId) {
-        return chatRepository.findAllByUser(userId);
-    }
-
-
-    @Override
     public void delete(DeletedChatRequest deletedChatRequest) {
         ChatEntity chat = findById(deletedChatRequest.getChatId());
 
@@ -68,7 +70,22 @@ public class ChatServiceImpl implements ChatService {
         }
     }
 
+    @Override
+    public List<ChatInfoResponse> findAllChatInfoByUser(Long user) {
+        List<ChatEntity> chats = chatRepository.findAllByUser(user);
+        List<ChatInfoResponse> responses = new ArrayList<>();
 
+        for (ChatEntity chat : chats) {
+            Long secondUserId = chat.getUser1Id().equals(user) ? chat.getUser2Id() : chat.getUser1Id();
+            UserResponse secondUser = authServiceClient.findById(secondUserId);
+            responses.add(new ChatInfoResponseImpl(
+                    chat.getId(),
+                    secondUser.getUsername(),
+                    secondUserId
+            ));
+        }
+        return responses;
+    }
 
 
 }
