@@ -1,4 +1,4 @@
-package uz.sb.chatservice.domain.entity.dto.request;
+package uz.sb.chatservice.domain.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

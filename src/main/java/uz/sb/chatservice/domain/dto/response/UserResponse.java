@@ -1,4 +1,4 @@
-package uz.sb.chatservice.domain.entity.dto.response;
+package uz.sb.chatservice.domain.dto.response;
 
 import lombok.*;
 
