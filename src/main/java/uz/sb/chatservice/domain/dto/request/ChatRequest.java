@@ -1,4 +1,4 @@
-package uz.sb.chatservice.domain.entity.dto.response;
+package uz.sb.chatservice.domain.dto.request;
 
 import lombok.*;
 
@@ -7,7 +7,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-public class ChatResponse extends BaseResponse {
+public class ChatRequest {
     private Long user1Id;
     private Long user2Id;
 }

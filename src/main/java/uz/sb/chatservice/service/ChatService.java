@@ -1,8 +1,8 @@
 package uz.sb.chatservice.service;
 
 import uz.sb.chatservice.domain.entity.ChatEntity;
-import uz.sb.chatservice.domain.entity.dto.request.ChatRequest;
-import uz.sb.chatservice.domain.entity.dto.request.DeletedChatRequest;
+import uz.sb.chatservice.domain.dto.request.ChatRequest;
+import uz.sb.chatservice.domain.dto.request.DeletedChatRequest;
 import uz.sb.chatservice.domain.views.ChatInfoResponse;
 import java.util.List;
 
