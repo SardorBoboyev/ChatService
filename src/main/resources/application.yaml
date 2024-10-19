@@ -5,9 +5,9 @@ spring:
   application:
     name: CHAT-SERVICE
   datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost}:5432/sardor
+    url: jdbc:postgresql://${DB_HOST:localhost}:5432/my_test
     username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:2004}
+    password: ${DB_PASSWORD:rayaandmaya1426}
   jpa:
     hibernate:
       ddl-auto: update
@@ -24,8 +24,9 @@ eureka:
   instance:
     preferIpAddress: true
 
+
 springdoc:
   swagger-ui:
-    config-url: /api/chat/v3/api-docs/swagger-config
-    url: /api/chat/swagger-ui
     path: /api/chat/swagger-ui
+  api-docs:
+    path: /api/chat/v3/api-docs

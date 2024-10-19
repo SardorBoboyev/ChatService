@@ -11,7 +11,12 @@ import uz.sb.chatservice.filter.CustomFilter;
 @Configuration
 public class SecurityConfig {
 
-    private final String[] WHITE_LIST = {"/api/chat/swagger-ui/**", "/api/chat/v3/api-docs/**"};
+    private final String[] WHITE_LIST = {"/api/chat/swagger-ui/**",
+            "/api/chat/v3/api-docs/**",
+            "/v3/api-docs/",
+            "/swagger-ui/",
+            "/swagger-ui.html"
+    };
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
