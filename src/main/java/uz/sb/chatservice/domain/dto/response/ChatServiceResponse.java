@@ -7,7 +7,9 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-public class ChatResponse extends BaseResponse {
+public class ChatServiceResponse extends BaseResponse {
     private Long user1Id;
     private Long user2Id;
+    private boolean isDeletedByUser1;
+    private boolean isDeletedByUser2;
 }

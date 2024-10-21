@@ -3,6 +3,7 @@ package uz.sb.chatservice.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import uz.sb.chatservice.clients.AuthServiceClient;
+import uz.sb.chatservice.domain.dto.response.ChatServiceResponse;
 import uz.sb.chatservice.domain.entity.ChatEntity;
 import uz.sb.chatservice.domain.dto.request.ChatRequest;
 import uz.sb.chatservice.domain.dto.request.DeletedChatRequest;
@@ -44,14 +45,24 @@ public class ChatServiceImpl implements ChatService {
 
 
     @Override
-    public ChatEntity findById(Long chatId) {
-        return chatRepository.findById(chatId).orElseThrow(() -> new DataNotFoundException("chat not found"));
+    public ChatServiceResponse findById(Long chatId) {
+        ChatEntity chat = chatRepository.findById(chatId).orElseThrow(() -> new DataNotFoundException("chat not found"));
+        ChatServiceResponse chatServiceResponse = new ChatServiceResponse();
+        chatServiceResponse.setUser1Id(chat.getUser1Id());
+        chatServiceResponse.setUser2Id(chat.getUser2Id());
+        chatServiceResponse.setId(chat.getId());
+        chatServiceResponse.setCreatedAt(chat.getCreatedAt());
+        chatServiceResponse.setUpdatedAt(chat.getUpdatedAt());
+        chatServiceResponse.setDeletedByUser1(chat.isDeletedByUser1());
+        chatServiceResponse.setDeletedByUser2(chat.isDeletedByUser2());
+        return chatServiceResponse;
     }
 
 
     @Override
     public void delete(DeletedChatRequest deletedChatRequest) {
-        ChatEntity chat = findById(deletedChatRequest.getChatId());
+        ChatEntity chat = chatRepository.findById(deletedChatRequest.getChatId()).orElseThrow(() ->
+                new DataNotFoundException("chat not found"));
 
         if (Objects.equals(chat.getUser1Id(), deletedChatRequest.getUserId())) {
             chat.setDeletedByUser1(true);

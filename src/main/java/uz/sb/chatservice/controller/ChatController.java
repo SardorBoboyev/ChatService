@@ -2,6 +2,7 @@ package uz.sb.chatservice.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import uz.sb.chatservice.domain.dto.response.ChatServiceResponse;
 import uz.sb.chatservice.domain.entity.ChatEntity;
 import uz.sb.chatservice.domain.dto.request.ChatRequest;
 import uz.sb.chatservice.domain.dto.request.DeletedChatRequest;
@@ -29,9 +30,10 @@ public class ChatController {
     }
 
     @GetMapping("/find-by-id/{id}")
-    public ChatEntity findById(@PathVariable long id) {
+    public ChatServiceResponse findById(@PathVariable long id) {
         return chatService.findById(id);
     }
+
 
     @PostMapping("/delete")
     public void delete(@RequestBody DeletedChatRequest deletedChatRequest) {

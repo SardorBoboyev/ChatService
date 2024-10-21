@@ -18,7 +18,7 @@ public class CustomFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
 
-        String username = request.getHeader("Authorization");
+        String username = request.getHeader("X-Username");
 //        String roles = request.getHeader("X-Roles");
 
         if (username == null) {
