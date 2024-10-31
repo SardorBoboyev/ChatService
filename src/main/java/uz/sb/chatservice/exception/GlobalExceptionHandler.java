@@ -17,7 +17,7 @@ public class GlobalExceptionHandler {
         ErrorResponse errorResponse = new ErrorResponse(
                 HttpStatus.NOT_FOUND.value(),
                 e.getMessage(),
-                request.getDescription(false)
+                ExceptionUtils.getStackTrace(e)
         );
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
