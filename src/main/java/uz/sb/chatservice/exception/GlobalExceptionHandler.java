@@ -9,25 +9,25 @@ import uz.sb.chatservice.domain.entity.ErrorResponse;
 
 //@ControllerAdvice
 public class GlobalExceptionHandler {
-
-    @ExceptionHandler(DataNotFoundException.class)
-    public ResponseEntity<?> handleDataNotFoundException(DataNotFoundException e, WebRequest request) {
-        ErrorResponse errorResponse = new ErrorResponse(
-                HttpStatus.NOT_FOUND.value(),
-                e.getMessage(),
-                request.getDescription(false)
-        );
-        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
-    }
-
-
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<?> handleInternalException(Exception e, WebRequest request) {
-        ErrorResponse errorResponse = new ErrorResponse(
-                HttpStatus.INTERNAL_SERVER_ERROR.value(),
-                e.getMessage(),
-                request.getDescription(false)
-        );
-        return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+//
+//    @ExceptionHandler(DataNotFoundException.class)
+//    public ResponseEntity<?> handleDataNotFoundException(DataNotFoundException e, WebRequest request) {
+//        ErrorResponse errorResponse = new ErrorResponse(
+//                HttpStatus.NOT_FOUND.value(),
+//                e.getMessage(),
+//                request.getDescription(false)
+//        );
+//        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+//    }
+//
+//
+//    @ExceptionHandler(Exception.class)
+//    public ResponseEntity<?> handleInternalException(Exception e, WebRequest request) {
+//        ErrorResponse errorResponse = new ErrorResponse(
+//                HttpStatus.INTERNAL_SERVER_ERROR.value(),
+//                e.getMessage(),
+//                request.getDescription(false)
+//        );
+//        return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+//    }
 }
