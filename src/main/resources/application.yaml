@@ -1,13 +1,22 @@
 server:
   port: 8099
 
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        web: DEBUG
+        security: DEBUG
+
 spring:
   application:
     name: CHAT-SERVICE
   datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost}:5432/my_test
+    url: jdbc:postgresql://${DB_HOST:localhost}:5432/sardor
     username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:rayaandmaya1426}
+    password: ${DB_PASSWORD:2004}
   jpa:
     hibernate:
       ddl-auto: update

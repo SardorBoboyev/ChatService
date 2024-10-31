@@ -35,7 +35,7 @@ public class ChatServiceImpl implements ChatService {
         }
 
         if (Objects.isNull(authServiceClient.findById(user1Id)) || Objects.isNull(authServiceClient.findById(user2Id))) {
-            throw new DataNotFoundException("users not found");
+            throw new DataNotFoundException("users not found with this id " + user1Id + " and " + user2Id );
         }
         return chatRepository.save(ChatEntity.builder()
                 .user1Id(user1Id)
