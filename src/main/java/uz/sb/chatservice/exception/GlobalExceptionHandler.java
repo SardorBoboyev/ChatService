@@ -21,17 +21,17 @@ public class GlobalExceptionHandler {
         );
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
-
-
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<?> handleInternalException(Exception e) {
-        ErrorResponse errorResponse = new ErrorResponse(
-                HttpStatus.INTERNAL_SERVER_ERROR.value(),
-                e.getMessage(),
-                ExceptionUtils.getStackTrace(e)
-
-        );
-        return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
-
-    }
+//
+//
+//    @ExceptionHandler(Exception.class)
+//    public ResponseEntity<?> handleInternalException(Exception e) {
+//        ErrorResponse errorResponse = new ErrorResponse(
+//                HttpStatus.INTERNAL_SERVER_ERROR.value(),
+//                e.getMessage(),
+//                ExceptionUtils.getStackTrace(e)
+//
+//        );
+//        return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+//
+//    }
 }
